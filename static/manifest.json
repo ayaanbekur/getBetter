@@ -1,6 +1,7 @@
 {
-  "name": "Get Better",
+  "name": "Get Better - Self Improvement App",
   "short_name": "Get Better",
+  "description": "Transform your life with personalized plans to quit bad habits, improve your lifestyle, and boost your appearance.",
   "start_url": "/",
   "display": "standalone",
   "background_color": "#0a0a0a",
@@ -9,14 +10,29 @@
   "scope": "/",
   "icons": [
     {
-      "src": "/static/GetBetter.jpg",
+      "src": "/static/icons/icon-192x192.png",
       "sizes": "192x192",
-      "type": "image/jpeg"
+      "type": "image/png",
+      "purpose": "any"
     },
     {
-      "src": "/static/GetBetter.jpg",
+      "src": "/static/icons/icon-512x512.png",
       "sizes": "512x512",
-      "type": "image/jpeg"
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "/static/icons/icon-maskable-192x192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "maskable"
+    },
+    {
+      "src": "/static/icons/icon-maskable-512x512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "maskable"
     }
-  ]
+  ],
+  "categories": ["lifestyle", "health"]
 }

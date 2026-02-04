@@ -1,10 +1,14 @@
 const CACHE_NAME = 'get-better-v1';
 const ASSETS_TO_CACHE = [
   '/',
+  '/manifest.json',
   '/static/css/style.css',
   '/static/js/main.js',
   '/static/GetBetter.jpg',
-  '/static/manifest.json'
+  '/static/icons/icon-192x192.png',
+  '/static/icons/icon-512x512.png',
+  '/static/icons/icon-maskable-192x192.png',
+  '/static/icons/icon-maskable-512x512.png'
 ];
 
 // Install event - cache static assets

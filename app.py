@@ -302,6 +302,7 @@ def assetlinks():
         }), 404
 
 # === Regular Routes ===
+@app.route('/')
 def home():
     return render_template('home.html')
 
