@@ -17,6 +17,15 @@ window.addEventListener('beforeunload', function() {
     }
 });
 
+// Toggle Dropdown Function
+function toggleDropdown(event) {
+    event.preventDefault();
+    const button = event.target.closest('.dropdown-toggle');
+    const content = button.nextElementSibling;
+    button.classList.toggle('active');
+    content.classList.toggle('active');
+}
+
 // Mobile Menu Toggle
 document.addEventListener('DOMContentLoaded', function() {
     const hamburger = document.querySelector('.hamburger');
