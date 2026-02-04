@@ -1,12 +1,8 @@
-[
-  {
-    "relation": ["delegate_permission/common.handle_all_urls"],
-    "target": {
-      "namespace": "android_app",
-      "package_name": "com.yourname.getbetter",
-      "sha256_cert_fingerprints": [
-        "PLACEHOLDER_FINGERPRINT_FROM_PWABUILDER"
-      ]
-    }
-  }
-]
+[{
+      "relation": ["delegate_permission/common.handle_all_urls"],
+      "target": {
+        "namespace": "android_app",
+        "package_name": "com.onrender.getbetter2026.twa",
+        "sha256_cert_fingerprints": ["DC:00:B2:47:70:37:95:02:6E:2D:EF:A3:A4:FC:16:E7:52:29:37:F4:4C:5F:EE:68:89:CC:64:39:B7:D5:2C:54"]
+      }
+    }]
