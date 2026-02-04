@@ -34,6 +34,10 @@ class UserPlan(db.Model):
     plan_data = db.Column(db.Text)  # Personalized plan data
     created_at = db.Column(db.DateTime, default=datetime.utcnow)
 
+# Initialize database tables on startup
+with app.app_context():
+    db.create_all()
+
 # Sample data for plans
 SUBSTANCE_INFO = {
     'vaping': {
