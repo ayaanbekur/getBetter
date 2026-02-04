@@ -347,6 +347,28 @@ nav {
     width: 95%;
     border: 2px solid var(--accent-orange);
     animation: slideUp 0.3s;
+    max-height: 85vh;
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+
+/* Scrollbar styling */
+.overlay-content::-webkit-scrollbar {
+    width: 10px;
+}
+
+.overlay-content::-webkit-scrollbar-track {
+    background: var(--bg-dark);
+    border-radius: 10px;
+}
+
+.overlay-content::-webkit-scrollbar-thumb {
+    background: var(--accent-orange);
+    border-radius: 10px;
+}
+
+.overlay-content::-webkit-scrollbar-thumb:hover {
+    background: var(--accent-red);
 }
 
 @keyframes slideUp {
