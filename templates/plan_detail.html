@@ -1,0 +1,300 @@
+{% extends "base.html" %}
+
+{% block title %}{{ category | title }} Plan - Get Better{% endblock %}
+
+{% block content %}
+<div class="plan-detail">
+    <div class="container">
+        <a href="/dashboard" style="color: var(--accent); text-decoration: none; margin-bottom: 1rem; display: inline-block;">← Back to Dashboard</a>
+
+        {% if category == 'vaping' %}
+            <h1>🚭 Quit Vaping: Your Personalized Plan</h1>
+            
+            {% if plan %}
+                <div class="plan-section">
+                    <h2>Why You Should Quit</h2>
+                    <p style="margin-bottom: 1rem; color: var(--text-secondary);">Vaping isn't as safe as the industry claims. Here's what actually happens to your body:</p>
+                    <ul>
+                        {% for risk in plan.health_risks %}
+                        <li>{{ risk }}</li>
+                        {% endfor %}
+                    </ul>
+                </div>
+
+                <div class="plan-section">
+                    <h2>What You'll Gain</h2>
+                    <ul>
+                        {% for benefit in plan.quit_benefits %}
+                        <li>{{ benefit }}</li>
+                        {% endfor %}
+                    </ul>
+                </div>
+
+                <div class="plan-section">
+                    <h2>Your 5-Week Plan</h2>
+                    {% for step in plan.plan_steps %}
+                    <h3>{{ step.split(':')[0] }}</h3>
+                    <p>{{ step.split(':')[1] if ':' in step else step }}</p>
+                    {% endfor %}
+                </div>
+            {% endif %}
+
+        {% elif category == 'nicotine' %}
+            <h1>🚬 Quit Nicotine: Complete Guide</h1>
+            
+            {% if plan %}
+                <div class="plan-section">
+                    <h2>The Reality of Nicotine Addiction</h2>
+                    <p style="margin-bottom: 1rem; color: var(--text-secondary);">Nicotine is one of the most addictive substances known to science. Here's what it does:</p>
+                    <ul>
+                        {% for risk in plan.health_risks %}
+                        <li>{{ risk }}</li>
+                        {% endfor %}
+                    </ul>
+                </div>
+
+                <div class="plan-section">
+                    <h2>Benefits of Quitting</h2>
+                    <ul>
+                        {% for benefit in plan.quit_benefits %}
+                        <li>{{ benefit }}</li>
+                        {% endfor %}
+                    </ul>
+                </div>
+
+                <div class="plan-section">
+                    <h2>Step-by-Step Quit Program</h2>
+                    {% for step in plan.plan_steps %}
+                    <h3>{{ step.split(':')[0] }}</h3>
+                    <p>{{ step.split(':')[1] if ':' in step else step }}</p>
+                    {% endfor %}
+                </div>
+            {% endif %}
+
+        {% elif category == 'alcohol' %}
+            <h1>🍷 Reduce Alcohol: Recovery Plan</h1>
+            
+            {% if plan %}
+                <div class="plan-section">
+                    <h2>How Alcohol Damages You</h2>
+                    <p style="margin-bottom: 1rem; color: var(--text-secondary);">Regular alcohol consumption has serious health consequences that many people underestimate:</p>
+                    <ul>
+                        {% for risk in plan.health_risks %}
+                        <li>{{ risk }}</li>
+                        {% endfor %}
+                    </ul>
+                </div>
+
+                <div class="plan-section">
+                    <h2>What Sobriety Brings</h2>
+                    <ul>
+                        {% for benefit in plan.quit_benefits %}
+                        <li>{{ benefit }}</li>
+                        {% endfor %}
+                    </ul>
+                </div>
+
+                <div class="plan-section">
+                    <h2>Your Reduction Plan</h2>
+                    {% for step in plan.plan_steps %}
+                    <h3>{{ step.split(':')[0] }}</h3>
+                    <p>{{ step.split(':')[1] if ':' in step else step }}</p>
+                    {% endfor %}
+                </div>
+            {% endif %}
+
+        {% elif category == 'tobacco' %}
+            <h1>🚬 Quit Smoking: Evidence-Based Program</h1>
+            
+            {% if plan %}
+                <div class="plan-section">
+                    <h2>Smoking's Real Damage</h2>
+                    <p style="margin-bottom: 1rem; color: var(--text-secondary);">Cigarettes kill more people than any other substance. Don't let marketing fool you:</p>
+                    <ul>
+                        {% for risk in plan.health_risks %}
+                        <li>{{ risk }}</li>
+                        {% endfor %}
+                    </ul>
+                </div>
+
+                <div class="plan-section">
+                    <h2>Why It's Worth Quitting</h2>
+                    <ul>
+                        {% for benefit in plan.quit_benefits %}
+                        <li>{{ benefit }}</li>
+                        {% endfor %}
+                    </ul>
+                </div>
+
+                <div class="plan-section">
+                    <h2>4-Week Quit Plan</h2>
+                    {% for step in plan.plan_steps %}
+                    <h3>{{ step.split(':')[0] }}</h3>
+                    <p>{{ step.split(':')[1] if ':' in step else step }}</p>
+                    {% endfor %}
+                </div>
+            {% endif %}
+
+        {% elif category == 'weed' %}
+            <h1>🌿 Quit Cannabis: Recovery Guide</h1>
+            
+            {% if plan %}
+                <div class="plan-section">
+                    <h2>The Cannabis Reality</h2>
+                    <p style="margin-bottom: 1rem; color: var(--text-secondary);">Despite legalization, regular weed use has real consequences:</p>
+                    <ul>
+                        {% for risk in plan.health_risks %}
+                        <li>{{ risk }}</li>
+                        {% endfor %}
+                    </ul>
+                </div>
+
+                <div class="plan-section">
+                    <h2>Benefits You'll Notice</h2>
+                    <ul>
+                        {% for benefit in plan.quit_benefits %}
+                        <li>{{ benefit }}</li>
+                        {% endfor %}
+                    </ul>
+                </div>
+
+                <div class="plan-section">
+                    <h2>Quitting Plan</h2>
+                    {% for step in plan.plan_steps %}
+                    <h3>{{ step.split(':')[0] }}</h3>
+                    <p>{{ step.split(':')[1] if ':' in step else step }}</p>
+                    {% endfor %}
+                </div>
+            {% endif %}
+
+        {% elif category == 'drugs' %}
+            <h1>⚠️ Hard Drugs Recovery Support</h1>
+            
+            {% if plan %}
+                <div class="plan-section">
+                    <h2>Why Hard Drugs Destroy Lives</h2>
+                    <p style="margin-bottom: 1rem; color: var(--text-secondary);">This isn't exaggeration—the consequences are severe:</p>
+                    <ul>
+                        {% for risk in plan.health_risks %}
+                        <li>{{ risk }}</li>
+                        {% endfor %}
+                    </ul>
+                </div>
+
+                <div class="plan-section">
+                    <h2>Recovery is Possible</h2>
+                    <ul>
+                        {% for benefit in plan.quit_benefits %}
+                        <li>{{ benefit }}</li>
+                        {% endfor %}
+                    </ul>
+                </div>
+
+                <div class="plan-section">
+                    <h2>📞 Get Professional Help</h2>
+                    <p style="color: var(--text-secondary); margin-bottom: 1rem;">Hard drug addiction requires professional support. Please reach out:</p>
+                    <ul>
+                        <li><strong>SAMHSA National Helpline:</strong> 1-800-662-4357 (free, confidential, 24/7)</li>
+                        <li><strong>Crisis Text Line:</strong> Text HOME to 741741</li>
+                        <li><strong>Narcotics Anonymous:</strong> Find meetings at NA.org</li>
+                        <li><strong>Your Doctor:</strong> Can refer you to treatment centers</li>
+                    </ul>
+                </div>
+            {% endif %}
+
+        {% elif category == 'lifestyle' %}
+            <h1>💪 Your Personalized Fitness & Health Plan</h1>
+            
+            {% if plan %}
+                <div class="plan-section">
+                    <h2>Your Stats</h2>
+                    <ul>
+                        <li><strong>Age:</strong> {{ plan.stats.age }}</li>
+                        <li><strong>Height:</strong> {{ plan.stats.height }}cm</li>
+                        <li><strong>Weight:</strong> {{ plan.stats.weight }}kg</li>
+                        <li><strong>BMI:</strong> {{ plan.stats.bmi }} ({{ 'Underweight' if plan.stats.bmi < 18.5 else 'Normal' if plan.stats.bmi < 25 else 'Overweight' if plan.stats.bmi < 30 else 'Obese' }})</li>
+                    </ul>
+                </div>
+
+                <div class="plan-section">
+                    <h2>Your Goal</h2>
+                    <p>{{ plan.assessment }}</p>
+                </div>
+
+                <div class="plan-section">
+                    <h2>8-Week Action Plan</h2>
+                    {% for step in plan.plan_steps %}
+                    <h3>{{ step.split(':')[0] }}</h3>
+                    <p>{{ step.split(':')[1] if ':' in step else step }}</p>
+                    {% endfor %}
+                </div>
+
+                <div class="plan-section">
+                    <h2>💡 Key Tips for Success</h2>
+                    <ul>
+                        {% for tip in plan.tips %}
+                        <li>{{ tip }}</li>
+                        {% endfor %}
+                    </ul>
+                </div>
+            {% endif %}
+
+        {% elif category == 'looks' %}
+            <h1>✨ Look Better: Science-Backed Guide</h1>
+            
+            {% if plan %}
+                {% for section_key, section in plan.sections.items() %}
+                    <div class="plan-section">
+                        <h2>{{ section.title }}</h2>
+                        
+                        {% if section.get('tips') %}
+                        <h3>What Actually Works</h3>
+                        <ul>
+                            {% for tip in section.tips %}
+                            <li>{{ tip }}</li>
+                            {% endfor %}
+                        </ul>
+                        {% endif %}
+
+                        {% if section.get('debunked') %}
+                        <h3>Debunked Methods (Don't Waste Your Time)</h3>
+                        <ul style="list-style-position: inside;">
+                            {% for myth in section.debunked %}
+                            <li style="color: var(--warning);">❌ {{ myth }}</li>
+                            {% endfor %}
+                        </ul>
+                        {% endif %}
+
+                        {% if section.get('backed') %}
+                        <h3>✓ Science-Backed Methods</h3>
+                        <ul>
+                            {% for method in section.backed %}
+                            <li>{{ method }}</li>
+                            {% endfor %}
+                        </ul>
+                        {% endif %}
+
+                        {% if section.get('points') %}
+                        <ul>
+                            {% for point in section.points %}
+                            <li>{{ point }}</li>
+                            {% endfor %}
+                        </ul>
+                        {% endif %}
+                    </div>
+                {% endfor %}
+            {% endif %}
+
+        {% endif %}
+
+        <div style="background-color: rgba(0, 212, 255, 0.05); padding: 2rem; border-radius: 8px; margin-top: 3rem; border-left: 4px solid var(--success);">
+            <h2 style="color: var(--success);">Remember</h2>
+            <p style="color: var(--text-secondary);">Change is hard, but not changing is harder. Start today, be consistent, and track your progress. In 4-8 weeks, you'll be amazed at how much you've improved. You've got this.</p>
+        </div>
+
+        <div style="text-align: center; margin-top: 2rem;">
+            <a href="/dashboard" class="btn btn-secondary">Back to Dashboard</a>
+        </div>
+    </div>
+</div>
+{% endblock %}

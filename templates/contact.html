@@ -1,0 +1,51 @@
+{% extends "base.html" %}
+
+{% block title %}Contact Us - Get Better{% endblock %}
+
+{% block content %}
+<div style="padding: 3rem 1rem; min-height: 70vh;">
+    <div class="container">
+        <h1 style="color: var(--accent); text-align: center; margin-bottom: 1rem;">Contact Us</h1>
+        <p style="text-align: center; color: var(--text-secondary); max-width: 600px; margin: 0 auto 2rem;">Have questions? Found a bug? Want to contribute? Reach out to us below.</p>
+
+        <form class="contact-form" onsubmit="handleContact(event)">
+            <div class="form-group">
+                <label for="name">Your Name</label>
+                <input type="text" id="name" required>
+            </div>
+
+            <div class="form-group">
+                <label for="email">Your Email</label>
+                <input type="email" id="email" required>
+            </div>
+
+            <div class="form-group">
+                <label for="message">Message</label>
+                <textarea id="message" required></textarea>
+            </div>
+
+            <button type="submit" class="btn btn-primary" style="width: 100%; cursor: pointer;">Send Message</button>
+        </form>
+
+        <div style="background-color: var(--bg-card); padding: 2rem; margin-top: 3rem; border-radius: 8px; border-left: 4px solid var(--accent);">
+            <h2 style="color: var(--accent); margin-bottom: 1rem;">Other Ways to Reach Us</h2>
+            <ul style="list-style: none; color: var(--text-secondary);">
+                <li style="padding: 0.8rem 0; border-bottom: 1px solid var(--border);">
+                    <strong>Email:</strong> hello@getbetter.com
+                </li>
+                <li style="padding: 0.8rem 0; border-bottom: 1px solid var(--border);">
+                    <strong>GitHub:</strong> github.com/getbetter (Report issues here)
+                </li>
+                <li style="padding: 0.8rem 0;">
+                    <strong>Social:</strong> Follow us for tips and updates on Twitter
+                </li>
+            </ul>
+        </div>
+
+        <div style="background-color: rgba(46, 213, 115, 0.05); padding: 2rem; margin-top: 2rem; border-radius: 8px; border-left: 4px solid var(--success);">
+            <h3 style="color: var(--success); margin-bottom: 0.5rem;">Crisis Support</h3>
+            <p style="color: var(--text-secondary);">If you're in crisis or need immediate help with substance abuse, please call <strong>1-800-662-4357</strong> (SAMHSA National Helpline) - free and confidential, available 24/7.</p>
+        </div>
+    </div>
+</div>
+{% endblock %}

@@ -1,0 +1,239 @@
+{% extends "base.html" %}
+
+{% block title %}Dashboard - Get Better{% endblock %}
+
+{% block content %}
+<div class="dashboard">
+    <div class="container">
+        <div class="dashboard-header">
+            <div>
+                <h1>Welcome, {{ user.email.split('@')[0] | title }}</h1>
+                <p style="color: var(--text-secondary); margin-top: 0.5rem;">Your personalized improvement plans</p>
+            </div>
+            <a href="/onboarding" class="btn btn-secondary">Edit Plans</a>
+        </div>
+
+        {% if plan %}
+            <div class="plan-grid">
+                {% set selected_items = plan.selected_items.split(',') %}
+                
+                {% if 'vaping' in selected_items %}
+                <div class="plan-card">
+                    <h3>🚭 Quit Vaping</h3>
+                    <p style="color: var(--text-secondary); margin-bottom: 1rem;">Nicotine vaping dependency cessation plan</p>
+                    
+                    <div class="dropdown">
+                        <button class="dropdown-toggle" onclick="this.classList.toggle('active'); this.nextElementSibling.classList.toggle('active')">
+                            View Plan <span class="dropdown-arrow">▼</span>
+                        </button>
+                        <div class="dropdown-content">
+                            <ul style="margin: 0; padding: 0;">
+                                <li style="margin: 0; padding: 0.5rem 0; border: none;">
+                                    <strong>Frequency:</strong> Daily user (estimated)
+                                </li>
+                                <li style="margin: 0; padding: 0.5rem 0; border: none;">
+                                    <strong>Duration:</strong> 5-week program
+                                </li>
+                                <li style="margin: 0; padding: 0.5rem 0; border: none;">
+                                    <strong>Focus:</strong> Breaking nicotine dependency
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <a href="/plan/vaping" class="btn btn-primary" style="width: 100%; margin-top: 1rem; text-align: center;">Full Plan Details</a>
+                </div>
+                {% endif %}
+
+                {% if 'nicotine' in selected_items %}
+                <div class="plan-card">
+                    <h3>🚬 Quit Nicotine</h3>
+                    <p style="color: var(--text-secondary); margin-bottom: 1rem;">Comprehensive nicotine dependence treatment</p>
+                    
+                    <div class="dropdown">
+                        <button class="dropdown-toggle" onclick="this.classList.toggle('active'); this.nextElementSibling.classList.toggle('active')">
+                            View Plan <span class="dropdown-arrow">▼</span>
+                        </button>
+                        <div class="dropdown-content">
+                            <ul style="margin: 0; padding: 0;">
+                                <li style="margin: 0; padding: 0.5rem 0; border: none;">
+                                    <strong>Focus:</strong> Breaking physical addiction
+                                </li>
+                                <li style="margin: 0; padding: 0.5rem 0; border: none;">
+                                    <strong>Duration:</strong> 5-week intensive program
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <a href="/plan/nicotine" class="btn btn-primary" style="width: 100%; margin-top: 1rem; text-align: center;">Full Plan Details</a>
+                </div>
+                {% endif %}
+
+                {% if 'alcohol' in selected_items %}
+                <div class="plan-card">
+                    <h3>🍷 Reduce Alcohol</h3>
+                    <p style="color: var(--text-secondary); margin-bottom: 1rem;">Alcohol reduction and cessation program</p>
+                    
+                    <div class="dropdown">
+                        <button class="dropdown-toggle" onclick="this.classList.toggle('active'); this.nextElementSibling.classList.toggle('active')">
+                            View Plan <span class="dropdown-arrow">▼</span>
+                        </button>
+                        <div class="dropdown-content">
+                            <ul style="margin: 0; padding: 0;">
+                                <li style="margin: 0; padding: 0.5rem 0; border: none;">
+                                    <strong>Strategy:</strong> Gradual reduction + alternatives
+                                </li>
+                                <li style="margin: 0; padding: 0.5rem 0; border: none;">
+                                    <strong>Timeline:</strong> 4-5 weeks
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <a href="/plan/alcohol" class="btn btn-primary" style="width: 100%; margin-top: 1rem; text-align: center;">Full Plan Details</a>
+                </div>
+                {% endif %}
+
+                {% if 'tobacco' in selected_items %}
+                <div class="plan-card">
+                    <h3>🚬 Quit Smoking</h3>
+                    <p style="color: var(--text-secondary); margin-bottom: 1rem;">Evidence-based smoking cessation program</p>
+                    
+                    <div class="dropdown">
+                        <button class="dropdown-toggle" onclick="this.classList.toggle('active'); this.nextElementSibling.classList.toggle('active')">
+                            View Plan <span class="dropdown-arrow">▼</span>
+                        </button>
+                        <div class="dropdown-content">
+                            <ul style="margin: 0; padding: 0;">
+                                <li style="margin: 0; padding: 0.5rem 0; border: none;">
+                                    <strong>Approach:</strong> Cold turkey + behavioral support
+                                </li>
+                                <li style="margin: 0; padding: 0.5rem 0; border: none;">
+                                    <strong>Duration:</strong> 4-week program
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <a href="/plan/tobacco" class="btn btn-primary" style="width: 100%; margin-top: 1rem; text-align: center;">Full Plan Details</a>
+                </div>
+                {% endif %}
+
+                {% if 'weed' in selected_items %}
+                <div class="plan-card">
+                    <h3>🌿 Quit Cannabis</h3>
+                    <p style="color: var(--text-secondary); margin-bottom: 1rem;">Cannabis dependency recovery program</p>
+                    
+                    <div class="dropdown">
+                        <button class="dropdown-toggle" onclick="this.classList.toggle('active'); this.nextElementSibling.classList.toggle('active')">
+                            View Plan <span class="dropdown-arrow">▼</span>
+                        </button>
+                        <div class="dropdown-content">
+                            <ul style="margin: 0; padding: 0;">
+                                <li style="margin: 0; padding: 0.5rem 0; border: none;">
+                                    <strong>Focus:</strong> Mental clarity & motivation recovery
+                                </li>
+                                <li style="margin: 0; padding: 0.5rem 0; border: none;">
+                                    <strong>Timeline:</strong> 4-5 weeks
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <a href="/plan/weed" class="btn btn-primary" style="width: 100%; margin-top: 1rem; text-align: center;">Full Plan Details</a>
+                </div>
+                {% endif %}
+
+                {% if 'drugs' in selected_items %}
+                <div class="plan-card">
+                    <h3>⚠️ Quit Hard Drugs</h3>
+                    <p style="color: var(--text-secondary); margin-bottom: 1rem;">Substance abuse recovery support program</p>
+                    
+                    <div class="dropdown">
+                        <button class="dropdown-toggle" onclick="this.classList.toggle('active'); this.nextElementSibling.classList.toggle('active')">
+                            View Plan <span class="dropdown-arrow">▼</span>
+                        </button>
+                        <div class="dropdown-content">
+                            <ul style="margin: 0; padding: 0;">
+                                <li style="margin: 0; padding: 0.5rem 0; border: none;">
+                                    <strong>Resources:</strong> Professional support recommendations
+                                </li>
+                                <li style="margin: 0; padding: 0.5rem 0; border: none;">
+                                    <strong>Note:</strong> Seek professional help
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <a href="/plan/drugs" class="btn btn-primary" style="width: 100%; margin-top: 1rem; text-align: center;">Full Plan Details</a>
+                </div>
+                {% endif %}
+
+                {% if 'lifestyle' in selected_items %}
+                <div class="plan-card">
+                    <h3>💪 Lifestyle & Fitness</h3>
+                    <p style="color: var(--text-secondary); margin-bottom: 1rem;">Personalized fitness and health improvement</p>
+                    
+                    <div class="dropdown">
+                        <button class="dropdown-toggle" onclick="this.classList.toggle('active'); this.nextElementSibling.classList.toggle('active')">
+                            View Plan <span class="dropdown-arrow">▼</span>
+                        </button>
+                        <div class="dropdown-content">
+                            <ul style="margin: 0; padding: 0;">
+                                <li style="margin: 0; padding: 0.5rem 0; border: none;">
+                                    <strong>Customized for you</strong> based on your stats
+                                </li>
+                                <li style="margin: 0; padding: 0.5rem 0; border: none;">
+                                    <strong>Includes:</strong> Exercise + nutrition guidance
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <a href="/plan/lifestyle" class="btn btn-primary" style="width: 100%; margin-top: 1rem; text-align: center;">Full Plan Details</a>
+                </div>
+                {% endif %}
+
+                {% if 'looks' in selected_items %}
+                <div class="plan-card">
+                    <h3>✨ Looks & Appearance</h3>
+                    <p style="color: var(--text-secondary); margin-bottom: 1rem;">Science-backed grooming and style guide</p>
+                    
+                    <div class="dropdown">
+                        <button class="dropdown-toggle" onclick="this.classList.toggle('active'); this.nextElementSibling.classList.toggle('active')">
+                            View Plan <span class="dropdown-arrow">▼</span>
+                        </button>
+                        <div class="dropdown-content">
+                            <ul style="margin: 0; padding: 0;">
+                                <li style="margin: 0; padding: 0.5rem 0; border: none;">
+                                    <strong>Topics:</strong> Skincare, fitness, fashion
+                                </li>
+                                <li style="margin: 0; padding: 0.5rem 0; border: none;">
+                                    <strong>Approach:</strong> What works vs. what's cope
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <a href="/plan/looks" class="btn btn-primary" style="width: 100%; margin-top: 1rem; text-align: center;">Full Plan Details</a>
+                </div>
+                {% endif %}
+            </div>
+        {% else %}
+            <div style="background-color: var(--bg-card); padding: 2rem; border-radius: 8px; text-align: center; border: 2px solid var(--accent);">
+                <h2 style="color: var(--accent); margin-bottom: 1rem;">Create Your Personalized Plan</h2>
+                <p style="color: var(--text-secondary); margin-bottom: 1.5rem;">You haven't created a plan yet. Let's get started by selecting what you need help with.</p>
+                <a href="/onboarding" class="btn btn-primary">Start Now</a>
+            </div>
+        {% endif %}
+
+        <div style="margin-top: 3rem; background-color: var(--bg-card); padding: 2rem; border-radius: 8px; border-left: 4px solid var(--accent);">
+            <h2 style="color: var(--accent); margin-bottom: 1rem;">💡 Tips</h2>
+            <ul style="color: var(--text-secondary); list-style: none; padding-left: 0;">
+                <li style="padding: 0.5rem 0; border-bottom: 1px solid var(--border);">
+                    <strong>Track Your Progress:</strong> Update your plan weekly and celebrate small wins
+                </li>
+                <li style="padding: 0.5rem 0; border-bottom: 1px solid var(--border);">
+                    <strong>Find Support:</strong> Tell friends/family about your goals - accountability helps
+                </li>
+                <li style="padding: 0.5rem 0;">
+                    <strong>Be Consistent:</strong> It takes 3-4 weeks to see major changes. Stick with it
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>
+{% endblock %}

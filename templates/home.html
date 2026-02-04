@@ -1,0 +1,62 @@
+{% extends "base.html" %}
+
+{% block title %}Home - Get Better{% endblock %}
+
+{% block content %}
+<div class="hero">
+    <div class="container">
+        <h1 class="typewriter">Get Better</h1>
+        <p>Take control of your health. Quit harmful habits. Improve your life. One step at a time.</p>
+        <div class="cta-buttons">
+            {% if session.get('user_id') %}
+                <a href="/dashboard" class="btn btn-primary">View Your Plan</a>
+            {% else %}
+                <a href="/signup" class="btn btn-primary">Start Your Journey</a>
+                <a href="/about" class="btn btn-secondary">Learn More</a>
+            {% endif %}
+        </div>
+    </div>
+</div>
+
+<div class="container features">
+    <div class="feature-card">
+        <h3>🚭 Quit Substances</h3>
+        <p>Personalized plans to help you quit vaping, nicotine, alcohol, tobacco, weed, and other harmful substances. Evidence-based strategies tailored to your needs.</p>
+    </div>
+
+    <div class="feature-card">
+        <h3>💪 Lifestyle & Fitness</h3>
+        <p>Get in shape with customized fitness plans. Whether you want to build muscle, lose weight, or just be more active—we've got you covered.</p>
+    </div>
+
+    <div class="feature-card">
+        <h3>✨ Look & Feel Better</h3>
+        <p>Practical advice on skincare, fitness, and style. Learn what actually works vs. what's just cope. Backed by science, not hype.</p>
+    </div>
+
+    <div class="feature-card">
+        <h3>📋 Multiple Goals</h3>
+        <p>Want to quit vaping AND go to the gym? No problem. Choose multiple goals and get personalized guidance for each.</p>
+    </div>
+
+    <div class="feature-card">
+        <h3>📱 Mobile Friendly</h3>
+        <p>Access your plans anywhere, anytime. Optimized for mobile with easy-to-read dropdowns that don't clutter your screen.</p>
+    </div>
+
+    <div class="feature-card">
+        <h3>🎯 Real Information</h3>
+        <p>Not corny motivational speeches. Deep dives into why harmful habits damage you, with actionable steps to improve.</p>
+    </div>
+</div>
+
+<div style="background-color: var(--bg-card); padding: 3rem 1rem; text-align: center; border-top: 2px solid var(--border); border-bottom: 2px solid var(--border);">
+    <div class="container">
+        <h2 style="color: var(--accent); margin-bottom: 1rem;">Ready to Change?</h2>
+        <p style="color: var(--text-secondary); margin-bottom: 1.5rem; font-size: 1.1rem;">Join thousands improving their lives with personalized, science-backed guidance.</p>
+        {% if not session.get('user_id') %}
+            <a href="/signup" class="btn btn-primary">Get Started Free</a>
+        {% endif %}
+    </div>
+</div>
+{% endblock %}
