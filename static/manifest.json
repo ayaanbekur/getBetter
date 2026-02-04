@@ -1,13 +1,17 @@
 {
+  "id": "/",
   "name": "Get Better - Self Improvement App",
   "short_name": "Get Better",
   "description": "Transform your life with personalized plans to quit bad habits, improve your lifestyle, and boost your appearance.",
   "start_url": "/",
   "display": "standalone",
+  "display_override": ["window-controls-overlay", "standalone"],
   "background_color": "#0a0a0a",
   "theme_color": "#0a0a0a",
   "orientation": "portrait",
   "scope": "/",
+  "lang": "en",
+  "dir": "ltr",
   "icons": [
     {
       "src": "/static/icons/icon-192x192.png",
@@ -34,5 +38,51 @@
       "purpose": "maskable"
     }
   ],
-  "categories": ["lifestyle", "health"]
+  "categories": ["lifestyle", "health"],
+  "screenshots": [
+    {
+      "src": "/static/screenshots/screenshot-narrow.png",
+      "sizes": "540x720",
+      "type": "image/png",
+      "form_factor": "narrow"
+    },
+    {
+      "src": "/static/screenshots/screenshot-wide.png",
+      "sizes": "1280x720",
+      "type": "image/png",
+      "form_factor": "wide"
+    }
+  ],
+  "shortcuts": [
+    {
+      "name": "Start Onboarding",
+      "short_name": "Onboarding",
+      "description": "Begin your personalized improvement plan",
+      "url": "/onboarding",
+      "icons": [
+        {
+          "src": "/static/icons/icon-192x192.png",
+          "sizes": "192x192"
+        }
+      ]
+    },
+    {
+      "name": "View Dashboard",
+      "short_name": "Dashboard",
+      "description": "Check your progress and plans",
+      "url": "/dashboard",
+      "icons": [
+        {
+          "src": "/static/icons/icon-192x192.png",
+          "sizes": "192x192"
+        }
+      ]
+    }
+  ],
+  "iarc_rating_id": "e84b9519-12dd-4b4d-8216-2d2d728ce782",
+  "scope_extensions": [
+    {
+      "origin": "https://*.onrender.com"
+    }
+  ]
 }
